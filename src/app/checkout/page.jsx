@@ -51,8 +51,8 @@ export default function CheckOutPage() {
           items: cartItems.map(item => ({
             id: item.id,
             name: item.title,
-            price: Math.round(item.price * 100), // Convert to cents
-            quantity: 1 // Assuming each item has quantity 1
+            price: Math.round(item.price * 100),
+            quantity: 1
           }))
         })
       })

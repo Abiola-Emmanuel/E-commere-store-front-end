@@ -5,7 +5,6 @@ export async function middleware(req) {
   const token = await getToken({
     req,
     secret: process.env.NEXTAUTH_SECRET, // Explicitly pass the secret
-    secureCookie: process.env.NODE_ENV === "production", // true for Vercel
   });
 
   const { pathname } = req.nextUrl;
