@@ -20,6 +20,12 @@ app.post('/api/checkout', async (req, res) => {
       return res.status(400).json({ error: 'Invalid items array' });
     }
 
+    console.log('Incoming checkout request with items:', {
+      items: req.body.items,
+      headers: req.headers,
+      origin: req.headers.origin
+    });
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: req.body.items.map(item => ({
