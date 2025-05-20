@@ -9,7 +9,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000;
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://e-commere-store-front-end.vercel.app/']
+  origin: ['http://localhost:3000', 'https://e-commere-store-front-end.vercel.app']
 }));
 
 app.use(express.json());
