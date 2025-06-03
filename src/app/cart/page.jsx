@@ -44,7 +44,7 @@ export default function CartPage() {
               >
                 <div className="aspect-square mb-4 bg-gray-50 rounded-lg overflow-hidden">
                   <img
-                    src={item.images && item.images[0]}
+                    src={item.image}
                     alt={item.title}
                     className="w-full h-full object-contain"
                   />

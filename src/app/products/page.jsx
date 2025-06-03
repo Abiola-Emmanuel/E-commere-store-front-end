@@ -17,7 +17,7 @@ export default function ProductsPage() {
     const fetchProducts = async () => {
       setLoading(true)
       try {
-        const res = await fetch('https://api.escuelajs.co/api/v1/products')
+        const res = await fetch('https://fakestoreapi.com/products')
         const data = await res.json();
         setProducts(data);
         setFilteredProducts(data);
@@ -78,7 +78,7 @@ export default function ProductsPage() {
                   whileHover={{ y: -5 }}
                 >
                   <img
-                    src={product.images?.[0]}
+                    src={product.image}
                     alt={product.title}
                     className="w-full h-64 object-contain mb-6"
                   />

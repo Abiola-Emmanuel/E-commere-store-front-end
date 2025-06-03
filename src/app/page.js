@@ -14,8 +14,10 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       setLoading(true);
-      const res = await axios.get('https://api.escuelajs.co/api/v1/products');
+      const res = await axios.get('https://fakestoreapi.com/products');
       setProducts(res.data.slice(0, 4));
+      console.log(res.data);
+
       setLoading(false);
     };
     fetchProducts();
@@ -48,7 +50,7 @@ export default function Home() {
             {products.map((product) => (
               <div key={product.id} className="flex flex-col justify-center">
                 <img
-                  src={product.images && product.images[0]}
+                  src={product.image}
                   alt={product.name}
                   className="object-contain w-full h-48 mb-4 rounded-lg"
                   loading="lazy"

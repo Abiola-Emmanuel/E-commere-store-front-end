@@ -16,7 +16,7 @@ export default function ProductPage({ params }) {
   useEffect(() => {
     const fetchProduct = async () => {
       setLoading(true)
-      const res = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
+      const res = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await res.json();
       setProduct(data);
       setLoading(false);
@@ -36,7 +36,7 @@ export default function ProductPage({ params }) {
             <>
               <div className="border border-gray-500 p-8 rounded-3xl">
                 <img
-                  src={product.images && product.images[0]}
+                  src={product.image}
                   alt={product.title}
                   className="w-full h-96 object-contain"
                 />
